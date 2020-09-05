@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const Topbar = () => (
-    <div>
-        BankAirbnb
+    <div className="topbar">
+        <h1>BankAirbnb</h1>
     </div>
 )

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Topbar } from './Component/Topbar';
-import { Title } from './Component/Title';
-import { Ranking } from './Component/Ranking';
+import { Topbar } from '../../components/Topbar'
+import { Title } from '../../components/Title';
+import { Ranking } from './components/Ranking'
 
 export const HomePage = () => (
     <section className="page">

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card } from './Card';
+import { Item } from './Item';
 
-const posts = [
+const list = [
     {
         id: 1,
         image:'https://a0.muscache.com/im/pictures/f3f1ac58-66b0-4d52-b754-a3b112431e52.jpg',
@@ -34,12 +34,10 @@ const posts = [
     }
 ];
 
-export const Ranking = () => (
-    <section className="ranking">
+export const ListItem = () => (
+    <section>
         {
-            posts.map( el => <Card key={ el.id } { ...el } /> )
-            // posts.map( el => <Card key={el.id} image={el.image} description={el.description} place={el.place} /> )
-            // posts.map( (el, key) => <Card key={key} image={el.image} description={el.description} place={el.place} /> )
+            list.map( el => <Item key={el.id} { ...el } />)
         }
     </section>
 )

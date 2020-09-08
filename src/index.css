@@ -95,3 +95,34 @@ body {
   opacity: 1;
   cursor: pointer;
 }
+
+.item {
+  box-shadow: 2px 2px 4px #cccccc;
+  border-radius: 10px;
+  overflow: hidden; 
+  display: flex;
+}
+
+.item img {
+  width: 40%;
+}
+
+.item h2 {
+  color: #767676;
+  font-weight: 700;
+  font-size: 1.2em;
+  width: 170px;
+  margin: 0 0;
+}
+
+.item p {
+  font-size: 1.20em;
+  font-weight: 300;
+  color: #767676;
+  margin: 0 0;
+}
+
+.item div {
+  padding-left: 10px;
+  align-self: center;
+}

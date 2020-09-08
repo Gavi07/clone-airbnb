@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Title } from '../../components/Title';
 import { CardDetail } from './components/CardDetail';
 import { Button } from '../../components/Button';
+import { FramePage } from '../FramePage';
 
 const buttonStyle = {
     backgroundColor: '#FC642D',
@@ -9,9 +10,9 @@ const buttonStyle = {
 }
 
 export const DetailPage = () => (
-    <section className="page">
+    <FramePage>
         <Title label="Parapente san felix"/>
         <CardDetail />
         <Button label="!Reserva Ahora¡" style={ buttonStyle } />
-    </section>
+    </FramePage>
 )

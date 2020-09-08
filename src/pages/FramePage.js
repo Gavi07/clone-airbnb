@@ -4,6 +4,8 @@ import { Topbar } from '../components/Topbar';
 export const FramePage = ({ children }) => (
     <Fragment>
         <Topbar />
-        { children }
+        <section className="page">
+            { children }
+        </section>
     </Fragment>
 )

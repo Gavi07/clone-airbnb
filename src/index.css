@@ -32,6 +32,10 @@ body {
   overflow: auto;
 }
 
+.ranking a {
+  text-decoration: none;
+}
+
 .ranking article {
   height: 230px;
   margin: 0 10px;
@@ -89,6 +93,7 @@ body {
   color: #fff;
   font-size: 1.1em;
   opacity: 0.9;
+  outline: none;
 }
 
 .button:hover {
@@ -96,11 +101,20 @@ body {
   cursor: pointer;
 }
 
+.listItem a{
+  text-decoration: none;
+}
+
 .item {
   box-shadow: 2px 2px 4px #cccccc;
   border-radius: 10px;
   overflow: hidden; 
   display: flex;
+  opacity: 0.8;
+}
+
+.item:hover {
+  opacity: 1;
 }
 
 .item img {
@@ -125,4 +139,18 @@ body {
 .item div {
   padding-left: 10px;
   align-self: center;
+}
+
+.score {
+  display: flex;
+  align-self: center;
+}
+
+.score p {
+  padding: 0;
+  margin: 0 10px;
+}
+
+.score div i {
+  color: #00A699;
 }

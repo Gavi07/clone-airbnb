@@ -13,7 +13,7 @@ export const Button = (
 ) => (
     isLink 
         ? <Link to={linkTo}>
-            <button disabled={disabled} className="button" style={style} type="button">
+            <button disabled={disabled} className="button" style={style} type={ type }>
                 {label}
             </button>
           </Link>

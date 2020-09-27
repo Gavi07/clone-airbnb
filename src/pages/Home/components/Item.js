@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Score } from '../../../components/Score';
 
 export const Item = (props) => (
-    <Link to={ `/detail/${props.id}` }>
+    <Link to={ `/detail/${props._id}` }>
         <article className="item">
             <img src={props.image} />
             <div>

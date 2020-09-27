@@ -19,7 +19,7 @@ export const DetailPage = () => {
 
     useEffect( () => {
         getDetail();
-    }, []); // solo entre una vez, vuelve a entrar si alguna de las variables que estan dentro de los corchotes cambia
+    }, []); // solo entre una vez, vuelve a entrar si alguna de las variables que estan dentro de los corchotes
 
     const getDetail = async () => {
         try {
@@ -34,7 +34,7 @@ export const DetailPage = () => {
         <FramePage>
             <Title label={detail.title}/>
             <CardDetail image={detail.image} description={detail.description} />
-            <Button isLink={true} linkTo={`/booking/${id}`} label="!Reserva Ahora¡" style={ buttonStyle } />
+            <Button isLink={true} linkTo={`/booking/${id}`} type="button" label="!Reserva Ahora¡" style={ buttonStyle } />
         </FramePage>
     );
 }

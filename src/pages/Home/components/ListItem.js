@@ -22,7 +22,7 @@ export const ListItem = () => {
     return (
         <section className="listItem">
             {
-                listItem.map( el => <Item key={el.id} { ...el } />)
+                listItem.map( el => <Item key={el._id} { ...el } />)
             }
         </section>
     )

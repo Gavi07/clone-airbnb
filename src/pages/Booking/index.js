@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '../../components/Button';
 import { FramePage } from '../FramePage';
-import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { requestHttp } from '../../config/HttpRequest';
 
 export const BookingPage = () => {
 
@@ -16,10 +16,12 @@ export const BookingPage = () => {
     const bookingHandler = (e) => {
         e.preventDefault();
         requestBooking();
-        // alert('Formulario enviado ...');
+        // alert('Formulario enviado con: ');
     }
 
-    const requestBooking = () => {
+    const [booking, setBooking] = useState([]);
+
+    const requestBooking = async () => {
         const body = {
             id,
             name,
@@ -28,6 +30,13 @@ export const BookingPage = () => {
             date
         }
         console.log('body', body);
+        try {
+            const response = await requestHttp('post', '/send', body);
+            setBooking(response.booking);
+            console.log('Formulario enviado con: ', booking);
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     useEffect( () => {
@@ -45,7 +54,7 @@ export const BookingPage = () => {
 
         // OPTION 2
         setIsValidForm(name !== '' && phone !== '' && email !== '' && date !== '');
-    }, [name, phone, email, date])
+    }, [name, phone, email, date]);
 
     return (
         <FramePage>
@@ -66,7 +75,7 @@ export const BookingPage = () => {
                 <label>Fecha de reserva:</label>
                 <input value={date} onChange= {e => setDate(e.target.value)}  type="date" />
             </div>
-            <Button disabled={!isValidForm} type="submit" label="Reserva ahora" />
+            <Button disabled={!isValidForm} type="submit" label="Reserva ahora" isLink={true} linkTo={`/`} />
         </form>
     </FramePage>
     )

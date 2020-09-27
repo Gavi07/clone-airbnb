@@ -7,7 +7,7 @@ export const Item = (props) => (
         <article className="item">
             <img src={props.image} />
             <div>
-                <h2>{props.description}</h2>
+                <h2>{props.title}</h2>
                 <p>{props.place}</p>
                 <Score score={props.score} users={props.users}/>
             </div>

@@ -31,8 +31,8 @@ export const BookingPage = () => {
         }
         console.log('body', body);
         try {
-            const response = await requestHttp('post', '/send', body);
-            setBooking(response.booking);
+            const response = await requestHttp('post', '/booking', body);
+            setBooking(response.resBooking);
             console.log('Formulario enviado con: ', booking);
         } catch (error) {
             console.error(error);
@@ -58,25 +58,25 @@ export const BookingPage = () => {
 
     return (
         <FramePage>
-        <form onSubmit={bookingHandler} className="booking-form">
-            <div>
-                <label>Nombre:</label>
-                <input value={name} onChange= {e => setName(e.target.value)} type="text" />
-            </div>
-            <div>
-                <label>Telefono:</label>
-                <input value={phone} onChange= {e => setPhone(e.target.value)}  type="tel" />
-            </div>
-            <div>
-                <label>Correo:</label>
-                <input value={email} onChange= {e => setEmail(e.target.value)}  type="email" />
-            </div>
-            <div>
-                <label>Fecha de reserva:</label>
-                <input value={date} onChange= {e => setDate(e.target.value)}  type="date" />
-            </div>
-            <Button disabled={!isValidForm} type="submit" label="Reserva ahora" isLink={true} linkTo={`/`} />
-        </form>
-    </FramePage>
+            <form onSubmit={bookingHandler} className="booking-form">
+                <div>
+                    <label>Nombre:</label>
+                    <input value={name} onChange= {e => setName(e.target.value)} type="text" />
+                </div>
+                <div>
+                    <label>Telefono:</label>
+                    <input value={phone} onChange= {e => setPhone(e.target.value)}  type="tel" />
+                </div>
+                <div>
+                    <label>Correo:</label>
+                    <input value={email} onChange= {e => setEmail(e.target.value)}  type="email" />
+                </div>
+                <div>
+                    <label>Fecha de reserva:</label>
+                    <input value={date} onChange= {e => setDate(e.target.value)}  type="date" />
+                </div>
+                <Button disabled={!isValidForm} type="submit" label="Reserva ahora" />
+            </form>            
+        </FramePage>
     )
 }
